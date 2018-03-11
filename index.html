@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.js" type="text/javascript"></script>
+    <script src="controller.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" ID="sm1"></asp:ScriptManager>
+
+        <div ng-app="newModule" ng-controller="newController">
+            <center>
+            <table>
+                <tr>
+                    <td>
+                        <input id="txtSubject" type="text" ng-model="subject" placeHolder="Enter the Subject"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea id="txtMessage" ng-model="message" cols="100" rows="4" placeHolder="Enter the Message"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button ng-click="validate();Save()">Save</button>
+                        <button ng-click="Clear()">Clear</button></td>
+                </tr>
+            </table>
+                from dataList
+                <table>
+                  <tr ng-repeat="x in dataList">
+                    <td>{{ x.Subject }}</td>
+                    <td>{{ x.Message }}</td>
+                  </tr>
+                </table>
+            </center>
+        </div>
+        <script type="text/javascript">
+            
+        </script>
+    </form>
+
+</body>
+</html>
